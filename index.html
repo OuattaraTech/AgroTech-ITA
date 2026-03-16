@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroTech ITA – Ingénierie Agronumérique</title>
+
+  <!-- ================================================
+    FAVICON
+    Remplacer par votre fichier images/favicon.png
+    Concept suggéré : lettres "TC" + feuille stylisée, 32×32 px
+  ================================================ -->
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Google Fonts : Cormorant Garamond (titres) + DM Sans (corps) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER – Navigation principale
+  ═══════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="header__inner">
+
+      <!-- LOGO
+        Pour insérer votre vrai logo, remplacez les deux spans ci-dessous
+        par : <img src="images/logo-terracode.svg" alt="TerraCode" width="140" height="40" />
+        Dimensions recommandées : 140 × 40 px, SVG fond transparent.
+      -->
+      <a href="#accueil" class="logo">
+        <span class="logo__mark" aria-hidden="true">TC</span>
+        <span class="logo__name">Terra<strong>Code</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#accueil"  class="nav__link">Accueil</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#equipe"   class="nav__link">À propos</a></li>
+          <li><a href="#contact"  class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════
+       HERO – Section d'accueil
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="accueil" aria-label="Accueil">
+
+    <!-- IMAGE HERO
+      POUR UTILISER VOTRE PROPRE PHOTO :
+        Remplacez les deux src ci-dessous par votre fichier local, ex :
+        src="images/hero-parcelle.webp"
+      Type recommandé : photo aérienne drone d'une parcelle agricole ivoirienne,
+      format WebP, 1920 × 1080 px minimum.
+
+      FONCTIONNEMENT DU FALLBACK :
+        - src principal  → images.unsplash.com (CDN rapide)
+        - onerror        → picsum.photos (CDN de secours)
+        - background CSS → dégradé vert + grille si les deux CDN échouent
+    -->
+    <div class="hero__visual" aria-hidden="true">
+      <img
+        src="images/IMAGE_FOND2.jpeg"
+        data-fallback="https://picsum.photos/seed/farm/1920/1080"
+        alt="Vue aérienne de parcelles agricoles"
+        class="hero__bg-img"
+        width="1920" height="1040"
+        loading="eager" fetchpriority="high"
+        onerror="if(!this._tried){this._tried=true;this.src=this.dataset.fallback}"
+      />
+      <div class="grid-anim" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero__content">
+      <span class="hero__tag">Junior Entreprise · ITA · ESA/INP-HB</span>
+      <h1 class="hero__title">
+        La terre,<br />
+        <em>réinventée</em><br />
+        par le numérique.
+      </h1>
+      <p class="hero__sub">
+        AgroTech ITA accompagne agriculteurs, coopératives et particuliers dans la
+        mise en place de solutions numériques pour leurs activités agronomiques — de la parcelle
+        aux données, du terrain au cloud.
+      </p>
+      <a href="#services" class="btn btn--primary">
+        Découvrir nos services
+        <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <!-- Bandeau de confiance -->
+      <div class="hero__trust" aria-label="Indicateurs de confiance">
+        <span class="hero__trust-item">5 services</span>
+        <span class="hero__trust-divider" aria-hidden="true"></span>
+        <span class="hero__trust-item">Junior Entreprise ITA</span>
+        <span class="hero__trust-divider" aria-hidden="true"></span>
+        <span class="hero__trust-item">Yamoussoukro, Côte d'Ivoire</span>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span class="hero__scroll-line"></span>
+      <span class="hero__scroll-text">Défiler</span>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION – Nos services
+  ═══════════════════════════════════════════ -->
+  <section class="services" id="services" aria-label="Nos services">
+    <div class="container">
+
+      <header class="section-header">
+        <span class="section-tag">Ce que nous faisons</span>
+        <h2 class="section-title">Nos services</h2>
+        <p class="section-intro">
+          Cinq expertises complémentaires, toutes ancrées dans la réalité
+          agronomique du terrain ivoirien et ouest-africain.
+        </p>
+      </header>
+
+      <div class="services__grid">
+
+        <!-- 01 – Collecte & Analyse de données -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <!-- IMAGE : Chercheur en collecte de données terrain (Unsplash)
+                 Remplacer le src par votre propre photo si souhaité -->
+            <img
+              src="images/analyse_données.jpeg"
+              alt="Étudiant ITA effectuant une collecte de données dans un champ agricole"
+              width="800" height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__num">01</span>
+            <h3 class="service-card__title">Collecte &amp; Analyse de données</h3>
+            <p class="service-card__desc">
+              Formulaires d'enquête sur mesure, collecte terrain et analyses statistiques
+              rigoureuses pour vos diagnostics agronomiques et études de rendement.
+            </p>
+            <ul class="service-card__list">
+              <li>Enquêtes terrain &amp; questionnaires numériques</li>
+              <li>Analyses statistiques agronomiques</li>
+              <li>Rapports de diagnostic agricole</li>
+            </ul>
+            <a href="#contact" class="service-card__cta" data-service="Collecte &amp; Analyse de données">
+              Demander un devis
+              <span class="service-card__cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 02 – Cartographie (SERVICE PHARE) -->
+        <article class="service-card service-card--featured">
+          <div class="service-card__media" style="position:relative">
+            <span class="service-card__badge">Service phare</span>
+            <!-- IMAGE : Vue satellite / zonage agricole (Unsplash)
+                 Remplacer par une vraie capture QGIS si disponible -->
+            <img
+              src="images/carto.jpeg"
+              alt="Carte satellite et zonage agricole sous QGIS"
+              width="800" height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__num">02</span>
+            <h3 class="service-card__title">Cartographie</h3>
+            <p class="service-card__desc">
+              Cartes d'occupation du sol, zonage agricole et suivi de parcelles sous QGIS.
+              Pilotez votre exploitation avec une précision géospatiale professionnelle.
+            </p>
+            <ul class="service-card__list">
+              <li>Cartes d'occupation du sol</li>
+              <li>Zonage et délimitation de parcelles</li>
+              <li>Analyses spatiales sous QGIS</li>
+            </ul>
+            <a href="#contact" class="service-card__cta" data-service="Cartographie">
+              Demander un devis
+              <span class="service-card__cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 03 – Solutions web -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <!-- IMAGE : Mockup site web / développement (Unsplash)
+                 Remplacer par un mockup de votre propre réalisation -->
+            <img
+              src="images/site-web.jpg"
+              alt="Développement de solutions web pour le secteur agricole"
+              width="800" height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__num">03</span>
+            <h3 class="service-card__title">Solutions web</h3>
+            <p class="service-card__desc">
+              Sites vitrines, plateformes de vente et portails d'information pour
+              agriculteurs, coopératives et startups agroalimentaires.
+            </p>
+            <ul class="service-card__list">
+              <li>Sites vitrines &amp; institutionnels</li>
+              <li>Plateformes de vente agricole</li>
+              <li>Portails d'information et de conseil</li>
+            </ul>
+            <a href="#contact" class="service-card__cta" data-service="Solutions web">
+              Demander un devis
+              <span class="service-card__cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 04 – Applications mobiles -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <!-- IMAGE : Application mobile agricole sur smartphone (Unsplash)
+                 Remplacer par un mockup de votre propre application -->
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&fit=crop"
+              alt="Application mobile de suivi des cultures agricoles"
+              width="800" height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__num">04</span>
+            <h3 class="service-card__title">Applications mobiles</h3>
+            <p class="service-card__desc">
+              Applications pensées pour le terrain : suivi des cultures, alertes météo
+              localisées, conseils techniques et mode déconnecté pour les zones rurales.
+            </p>
+            <ul class="service-card__list">
+              <li>Suivi et journal cultural numérique</li>
+              <li>Alertes météo et conseils techniques</li>
+              <li>Mode hors-ligne (zones rurales)</li>
+            </ul>
+            <a href="#contact" class="service-card__cta" data-service="Applications mobiles">
+              Demander un devis
+              <span class="service-card__cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 05 – Logiciels de bureau -->
+        <article class="service-card">
+          <div class="service-card__media">
+            <!-- IMAGE : Dashboard / logiciel de gestion agricole (Unsplash)
+                 Remplacer par une capture de votre propre logiciel -->
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&fit=crop"
+              alt="Tableau de bord logiciel de gestion agricole"
+              width="800" height="400"
+              loading="lazy"
+            />
+          </div>
+          <div class="service-card__body">
+            <span class="service-card__num">05</span>
+            <h3 class="service-card__title">Logiciels de bureau</h3>
+            <p class="service-card__desc">
+              Automatisation des tâches répétitives : gestion de stocks, suivi de production,
+              rapports automatisés. Moins d'erreurs, plus d'efficacité.
+            </p>
+            <ul class="service-card__list">
+              <li>Gestion de stocks d'intrants &amp; récoltes</li>
+              <li>Suivi de production &amp; reporting</li>
+              <li>Automatisation de tâches agricoles</li>
+            </ul>
+            <a href="#contact" class="service-card__cta" data-service="Logiciels de bureau">
+              Demander un devis
+              <span class="service-card__cta-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /.services__grid -->
+    </div><!-- /.container -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION – À propos / Équipe
+  ═══════════════════════════════════════════ -->
+  <section class="about-band" id="equipe" aria-label="À propos de TerraCode">
+    <div class="container">
+      <div class="about-band__inner">
+
+        <div class="about-band__text">
+          <span class="section-tag" style="color:var(--c-gold-l)">Qui sommes-nous</span>
+          <h2 class="about-band__title">
+            Ingénieurs des techniques agricoles,<br />
+            développeurs par passion.
+          </h2>
+          <p>
+            AgroTech ITA est la junior entreprise des étudiants en Ingénierie des Techniques
+            Agricoles (ITA) de l'Institut National Polytechnique Félix Houphouët-Boigny
+            (INP-HB). Nous combinons une solide formation agronomique et des compétences
+            numériques pour proposer des solutions innovantes, adaptées aux défis du
+            secteur agricole en Côte d'Ivoire et en Afrique de l'Ouest.
+          </p>
+        </div>
+
+        <div class="about-band__visual">
+          <!-- IMAGE : Photo d'équipe étudiants ITA (Unsplash)
+               Remplacer par une vraie photo de votre équipe INP-HB
+               Type recommandé : photo de groupe sur le campus ou en tenue de terrain
+               Dimensions : 900 × 675 px, WebP -->
+          <img
+            src="images/photo_groupe.jpeg"
+            alt="Équipe AgroTech ITA – étudiants ITA de l'INP-HB"
+            width="900" height="675"
+            loading="lazy"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       SECTION – Formulaire de contact
+       NOTE : Pour connecter à Formspree (gratuit),
+       voir le commentaire dans js/main.js section 9.
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="contact" aria-label="Nous contacter">
+    <div class="contact__inner">
+
+      <!-- Panneau gauche : informations de contact -->
+      <div class="contact__panel">
+        <div>
+          <span class="contact__panel-tag">Travaillons ensemble</span>
+          <h2 class="contact__panel-title">
+            Parlons de<br /><em>votre projet.</em>
+          </h2>
+          <p class="contact__panel-desc">
+            Une idée, un besoin, un devis ? Notre équipe d'ingénieurs
+            vous répond sous 24h.
+          </p>
+        </div>
+        <div class="contact__info-list">
+          <div class="contact__info-item">
+            <span class="contact__info-label">Téléphone</span>
+            <!-- Remplacer par votre numéro officiel -->
+            <span class="contact__info-value">+225 07 79 66 75 43</span>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-label">Email</span>
+            <!-- Remplacer par votre email officiel -->
+            <span class="contact__info-value">contact@agrotech-ita.com</span>
+          </div>
+          <div class="contact__info-item">
+            <span class="contact__info-label">Localisation</span>
+            <span class="contact__info-value">INP-HB · Yamoussoukro, Côte d'Ivoire</span>
+          </div>
+        </div>
+        <span class="contact__panel-line" aria-hidden="true"></span>
+      </div>
+
+      <!-- Zone formulaire -->
+      <div class="contact__form-wrap">
+        <form class="contact-form" id="contactForm" novalidate aria-label="Formulaire de contact">
+
+          <h3 class="form-heading">
+            <span>Formulaire de contact</span>
+            Envoyez-nous<br />un message
+          </h3>
+
+          <!-- Étapes de progression (JS les anime dynamiquement) -->
+          <div class="form-steps" aria-label="Progression du formulaire" role="list">
+            <div class="form-step active" id="step1" role="listitem">
+              <span class="form-step__dot">1</span>
+              <span>Identité</span>
+            </div>
+            <div class="form-step" id="step2" role="listitem">
+              <span class="form-step__dot">2</span>
+              <span>Contact</span>
+            </div>
+            <div class="form-step" id="step3" role="listitem">
+              <span class="form-step__dot">3</span>
+              <span>Projet</span>
+            </div>
+          </div>
+
+          <!-- Honeypot anti-spam -->
+          <div class="visually-hidden" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <input type="text" id="nom" name="nom"
+                class="form-field__input" placeholder="Kouassi"
+                required aria-required="true" autocomplete="family-name" />
+              <label for="nom" class="form-field__label">
+                Nom<span class="form-field__req" aria-hidden="true"> *</span>
+              </label>
+              <span class="form-field__bar" aria-hidden="true"></span>
+              <span class="form-field__error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-field">
+              <input type="text" id="prenom" name="prenom"
+                class="form-field__input" placeholder="Arnaud"
+                autocomplete="given-name" />
+              <label for="prenom" class="form-field__label">Prénom</label>
+              <span class="form-field__bar" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <input type="tel" id="telephone" name="telephone"
+                class="form-field__input" placeholder="+225 07 00 00 00 00"
+                required aria-required="true" autocomplete="tel" />
+              <label for="telephone" class="form-field__label">
+                Téléphone<span class="form-field__req" aria-hidden="true"> *</span>
+              </label>
+              <span class="form-field__bar" aria-hidden="true"></span>
+              <span class="form-field__error" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-field">
+              <input type="email" id="email" name="email"
+                class="form-field__input" placeholder="vous@exemple.com"
+                required aria-required="true" autocomplete="email" />
+              <label for="email" class="form-field__label">
+                Email<span class="form-field__req" aria-hidden="true"> *</span>
+              </label>
+              <span class="form-field__bar" aria-hidden="true"></span>
+              <span class="form-field__error" role="alert" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <textarea id="message" name="message"
+              class="form-field__input form-field__input--textarea"
+              placeholder="Décrivez votre projet…" rows="4"></textarea>
+            <label for="message" class="form-field__label">
+              Message &amp; service souhaité
+            </label>
+            <span class="form-field__bar" aria-hidden="true"></span>
+          </div>
+
+          <div class="form-actions">
+            <p class="form-note">
+              <span style="color:var(--c-gold)">*</span> Champs obligatoires
+            </p>
+            <button type="submit" class="btn-send">
+              <span class="btn-send__text">Envoyer le message</span>
+              <span class="btn-send__arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite" hidden>
+            Message reçu — nous vous répondrons très prochainement.
+          </div>
+
+        </form>
+      </div><!-- /.contact__form-wrap -->
+
+    </div><!-- /.contact__inner -->
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Pied de page">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <!-- Logo footer — même concept que le header -->
+          <a href="#accueil" class="logo">
+            <span class="logo__mark logo__mark--light" aria-hidden="true">TC</span>
+            <span class="logo__name logo__name--light">Terra<strong>Code</strong></span>
+          </a>
+          <p class="footer__tagline">
+            Junior Entreprise · ITA · ESA/INP-HB<br />
+            Yamoussoukro, Côte d'Ivoire
+          </p>
+        </div>
+
+        <nav class="footer__nav" aria-label="Navigation pied de page">
+          <h3 class="footer__nav-title">Navigation</h3>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#equipe">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact">
+          <h3 class="footer__nav-title">Contact direct</h3>
+          <!-- Mettre à jour avec vos coordonnées officielles -->
+          <p>+225 07 79 66 75 43</p>
+          <p>contact@agrotech-ita.com</p>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <!-- MENTIONS LÉGALES — décommenter quand rédigées :
+          <a href="mentions-legales.html">Mentions légales</a> ·
+          <a href="confidentialite.html">Politique de confidentialité</a>
+        -->
+        <p>© <span id="currentYear"></span> AgroTech ITA – Junior Entreprise ESA/INP-HB. Tous droits réservés.</p>
+        <p>Site réalisé par les étudiants ITA de l'INP-HB.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       BOUTON WHATSAPP FIXE
+       Seule icône autorisée · Numéro : +225 0779667543
+       Apparaît après 3 secondes ou au premier scroll
+  ═══════════════════════════════════════════ -->
+  <a
+    href="https://wa.me/2250779667543?text=Bonjour%20TerraCode%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services."
+    class="whatsapp-btn"
+    id="whatsappBtn"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Nous contacter sur WhatsApp"
+    title="Contacter TerraCode sur WhatsApp"
+  >
+    <svg class="whatsapp-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="whatsapp-btn__label">WhatsApp</span>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
