@@ -88,7 +88,10 @@ button { font-family: var(--f-body); cursor: pointer; border: none; background: 
   margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
   white-space: nowrap; border: 0;
 }
-
+/* Logo PNG — version claire pour fonds sombres */
+.logo img {
+  filter: brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg);
+}
 /* ─────────────────────────────────────────────────
    2. HEADER
 ───────────────────────────────────────────────── */
@@ -255,7 +258,7 @@ button { font-family: var(--f-body); cursor: pointer; border: none; background: 
 .hero__bg-img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center; z-index: 0;
+  object-fit: cover; object-position: center ; z-index: 0;
 }
 
 /* Grille décorative animée */
