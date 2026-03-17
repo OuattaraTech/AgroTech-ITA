@@ -28,13 +28,9 @@
     <div class="header__inner">
 
       <!-- LOGO
-        Pour insérer votre vrai logo, remplacez les deux spans ci-dessous
-        par : <img src="images/logo-terracode.svg" alt="TerraCode" width="140" height="40" />
-        Dimensions recommandées : 140 × 40 px, SVG fond transparent.
       -->
       <a href="#accueil" class="logo">
-        <span class="logo__mark" aria-hidden="true">TC</span>
-        <span class="logo__name">Terra<strong>Code</strong></span>
+        <img src="images/LOGO-removebg-preview.png" alt="TerraCode" width="280" height="80" />
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -59,22 +55,12 @@
   <section class="hero" id="accueil" aria-label="Accueil">
 
     <!-- IMAGE HERO
-      POUR UTILISER VOTRE PROPRE PHOTO :
-        Remplacez les deux src ci-dessous par votre fichier local, ex :
-        src="images/hero-parcelle.webp"
-      Type recommandé : photo aérienne drone d'une parcelle agricole ivoirienne,
-      format WebP, 1920 × 1080 px minimum.
-
-      FONCTIONNEMENT DU FALLBACK :
-        - src principal  → images.unsplash.com (CDN rapide)
-        - onerror        → picsum.photos (CDN de secours)
-        - background CSS → dégradé vert + grille si les deux CDN échouent
     -->
     <div class="hero__visual" aria-hidden="true">
       <img
         src="images/IMAGE_FOND2.jpeg"
         data-fallback="https://picsum.photos/seed/farm/1920/1080"
-        alt="Vue aérienne de parcelles agricoles"
+        alt="activité en parcelle agricole"
         class="hero__bg-img"
         width="1920" height="1040"
         loading="eager" fetchpriority="high"
@@ -137,8 +123,7 @@
         <!-- 01 – Collecte & Analyse de données -->
         <article class="service-card">
           <div class="service-card__media">
-            <!-- IMAGE : Chercheur en collecte de données terrain (Unsplash)
-                 Remplacer le src par votre propre photo si souhaité -->
+            
             <img
               src="images/analyse_données.jpeg"
               alt="Étudiant ITA effectuant une collecte de données dans un champ agricole"
@@ -169,8 +154,7 @@
         <article class="service-card service-card--featured">
           <div class="service-card__media" style="position:relative">
             <span class="service-card__badge">Service phare</span>
-            <!-- IMAGE : Vue satellite / zonage agricole (Unsplash)
-                 Remplacer par une vraie capture QGIS si disponible -->
+            
             <img
               src="images/carto.jpeg"
               alt="Carte satellite et zonage agricole sous QGIS"
@@ -200,8 +184,7 @@
         <!-- 03 – Solutions web -->
         <article class="service-card">
           <div class="service-card__media">
-            <!-- IMAGE : Mockup site web / développement (Unsplash)
-                 Remplacer par un mockup de votre propre réalisation -->
+            
             <img
               src="images/site-web.jpg"
               alt="Développement de solutions web pour le secteur agricole"
@@ -231,8 +214,7 @@
         <!-- 04 – Applications mobiles -->
         <article class="service-card">
           <div class="service-card__media">
-            <!-- IMAGE : Application mobile agricole sur smartphone (Unsplash)
-                 Remplacer par un mockup de votre propre application -->
+            
             <img
               src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&fit=crop"
               alt="Application mobile de suivi des cultures agricoles"
@@ -262,8 +244,7 @@
         <!-- 05 – Logiciels de bureau -->
         <article class="service-card">
           <div class="service-card__media">
-            <!-- IMAGE : Dashboard / logiciel de gestion agricole (Unsplash)
-                 Remplacer par une capture de votre propre logiciel -->
+            
             <img
               src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&fit=crop"
               alt="Tableau de bord logiciel de gestion agricole"
@@ -318,10 +299,7 @@
         </div>
 
         <div class="about-band__visual">
-          <!-- IMAGE : Photo d'équipe étudiants ITA (Unsplash)
-               Remplacer par une vraie photo de votre équipe INP-HB
-               Type recommandé : photo de groupe sur le campus ou en tenue de terrain
-               Dimensions : 900 × 675 px, WebP -->
+          
           <img
             src="images/photo_groupe.jpeg"
             alt="Équipe AgroTech ITA – étudiants ITA de l'INP-HB"
@@ -336,9 +314,7 @@
 
 
   <!-- ═══════════════════════════════════════════
-       SECTION – Formulaire de contact
-       NOTE : Pour connecter à Formspree (gratuit),
-       voir le commentaire dans js/main.js section 9.
+       SECTION – Formulaire de contact     
   ═══════════════════════════════════════════ -->
   <section class="contact" id="contact" aria-label="Nous contacter">
     <div class="contact__inner">
@@ -358,7 +334,7 @@
         <div class="contact__info-list">
           <div class="contact__info-item">
             <span class="contact__info-label">Téléphone</span>
-            <!-- Remplacer par votre numéro officiel -->
+            <!--  numéro officiel -->
             <span class="contact__info-value">+225 07 79 66 75 43</span>
           </div>
           <div class="contact__info-item">
@@ -488,8 +464,7 @@
         <div class="footer__brand">
           <!-- Logo footer — même concept que le header -->
           <a href="#accueil" class="logo">
-            <span class="logo__mark logo__mark--light" aria-hidden="true">TC</span>
-            <span class="logo__name logo__name--light">Terra<strong>Code</strong></span>
+            <img src="images/LOGO-removebg-preview.png" alt="TerraCode" width="280" height="80" />
           </a>
           <p class="footer__tagline">
             Junior Entreprise · ITA · ESA/INP-HB<br />
@@ -509,7 +484,7 @@
 
         <div class="footer__contact">
           <h3 class="footer__nav-title">Contact direct</h3>
-          <!-- Mettre à jour avec vos coordonnées officielles -->
+          <!--  coordonnées officielles -->
           <p>+225 07 79 66 75 43</p>
           <p>contact@agrotech-ita.com</p>
         </div>
@@ -517,7 +492,7 @@
       </div>
 
       <div class="footer__bottom">
-        <!-- MENTIONS LÉGALES — décommenter quand rédigées :
+        <!-- MENTIONS LÉGALES  :
           <a href="mentions-legales.html">Mentions légales</a> ·
           <a href="confidentialite.html">Politique de confidentialité</a>
         -->
@@ -530,8 +505,6 @@
 
   <!-- ═══════════════════════════════════════════
        BOUTON WHATSAPP FIXE
-       Seule icône autorisée · Numéro : +225 0779667543
-       Apparaît après 3 secondes ou au premier scroll
   ═══════════════════════════════════════════ -->
   <a
     href="https://wa.me/2250779667543?text=Bonjour%20TerraCode%2C%20je%20souhaite%20en%20savoir%20plus%20sur%20vos%20services."
