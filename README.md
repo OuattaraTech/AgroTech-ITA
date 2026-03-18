@@ -1,4 +1,4 @@
-# TerraCode — Site web version finale
+# AgroTech — Site web version finale
 
 ## Structure du projet
 
@@ -33,26 +33,8 @@ terracode/
 
 ---
 
-## Remplacer les images
 
-Cherchez les commentaires `<!-- IMAGE :` dans `index.html` pour chaque section.
 
-| Section | Fichier suggéré | Type |
-|---|---|---|
-| Hero | `images/hero-parcelle.webp` | Photo aérienne drone parcelle ivoirienne |
-| Service 01 | `images/s01-collecte.webp` | Étudiant ITA + tablette en plantation |
-| Service 02 | `images/s02-carto-qgis.webp` | Capture QGIS zonage agricole |
-| Service 03 | `images/s03-web-mockup.webp` | Mockup site coopérative |
-| Service 04 | `images/s04-app-mobile.webp` | Mockup app suivi cultures |
-| Service 05 | `images/s05-logiciel.webp` | Capture logiciel gestion stock |
-| À propos | `images/equipe-inphb.webp` | Photo équipe TerraCode terrain |
-
-Syntaxe de remplacement :
-```html
-<img src="images/votre-photo.webp" alt="Description" width="800" height="400" loading="lazy" />
-```
-
----
 
 ## Connecter le formulaire (Formspree — gratuit)
 
@@ -79,21 +61,3 @@ fetch('https://formspree.io/f/VOTRE_ID', {
 ```
 
 ---
-
-## Palette de couleurs
-
-| Variable CSS | Valeur | Usage |
-|---|---|---|
-| `--c-forest` | `#1C3A2A` | Fond header, footer, titre |
-| `--c-forest-d` | `#122519` | Fond très sombre |
-| `--c-sage` | `#4A7C59` | Accents secondaires |
-| `--c-gold` | `#B8914A` | Or terreux — CTA principal |
-| `--c-cream` | `#F5F0E8` | Fond pages clair |
-| `--c-white` | `#FAFAF7` | Fond cartes |
-
----
-
-## Polices Google Fonts
-
-- **Cormorant Garamond** — titres, slogan, numéros de service
-- **DM Sans** — tout le corps de texte, labels, boutons
